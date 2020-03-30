@@ -2,9 +2,13 @@
 
 The Open Source next-generation Web Editor based on the rendering engine of Firefox
 
+## Requirements
+
+* an environment ready to build Mozilla: [Windows](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Windows_Prerequisites), [MacOS X](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Mac_OS_X_Prerequisites), [Linux](https://firefox-source-docs.mozilla.org/contributing/build/linux_build.html)
+* 3Go storage space for gecko sources
+
 ## To prepare the build USING MERCURIAL
 
-* make sure to have installed the environment to build Mozilla: [windows](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Windows_Prerequisites), [MacOS X](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Mac_OS_X_Prerequisites), [linux](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Linux_Prerequisites)
 * get mozilla-central from Mozilla through Mercurial:
 
   `hg clone http://hg.mozilla.org/mozilla-central bluegriffon-source`
@@ -29,10 +33,9 @@ The Open Source next-generation Web Editor based on the rendering engine of Fire
 
 ## To prepare the build USING GIT
 
-* make sure to have installed the environment to build Mozilla: [windows](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Windows_Prerequisites), [MacOS X](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Mac_OS_X_Prerequisites), [linux](https://developer.mozilla.org/En/Developer_Guide/Build_Instructions/Linux_Prerequisites)
 * get gecko-dev from github through git:
 
-  `git clone https://github.com/mozilla/gecko-dev bluegriffon-source`
+  `git clone git@github.com:mozilla/gecko-dev bluegriffon-source`
 
   Warning: on Windows, it's HIGHLY recommended to have both Windows and Visual Studio in the same locale, preferably en-US. If for instance you have a fr-FR Windows10 and a en-US VS, build will miserably fail...
 
@@ -40,7 +43,7 @@ The Open Source next-generation Web Editor based on the rendering engine of Fire
 
   `cd bluegriffon-source`
 
-  `git clone https://github.com/therealglazou/bluegriffon`
+  `git clone git@github.com:therealglazou/bluegriffon.git`
 
 * update the mozilla tree
 
@@ -51,12 +54,6 @@ The Open Source next-generation Web Editor based on the rendering engine of Fire
   `patch -p 1 < bluegriffon/config/gecko_dev_idl.patch`
 
 * create a `.mozconfig` file inside your `bluegriffon-source` directory. The  settings I am using on a daily basis on OS X (Sierra) can be found in `bluegriffon/config/mozconfig.macosx`
-
-## My own builds
-
-* OS X: OS X 10.12.6 with Xcode version 9.0 (9A235)
-* Windows: Windows 10 Pro with Visual Studio Community 2015
-* Linux: Ubuntu 16.04.1 LTS
 
 ## Build BlueGriffon
 
@@ -69,6 +66,12 @@ The Open Source next-generation Web Editor based on the rendering engine of Fire
 ## Package the build
 
 `./mach package`
+
+## Available builds
+
+* OS X: OS X 10.12.6 with Xcode version 9.0 (9A235)
+* Windows: Windows 10 Pro with Visual Studio Community 2015
+* Linux: Ubuntu 16.04.1 LTS
 
 ## Want to contribute to BlueGriffon?
 
